@@ -39,28 +39,28 @@
 - 多思考，总结不同工具，多做hands-on，记录自己的排错方法
 - 每节课我们提供概念，基本实现步骤和实现后的结果
 - 排错是你的任务，多google，多思考，90%的答案都在google上
-- 
+  
 ### DevOps是什么
 DevOps是一组旨在保证高质量，高可用性的同时，减少软件迭代时间的开发， 测试与运维高度整合的实践。
 - 历史上，开发(Dev)和运维(Ops)是分开的两个部分 。
-- 就像Windows安装要等待很久，每次软件迭代需要等待很久，导致用户很不开心；同样的云端的软件，我们在迭代的同时，也不能系统宕机，怎么去完成这种更新，就需要我们的DevOps Process。
-- 开发人员，就像造火车，对火车进行设计（开发）； DevOps等于造铁轨，同时监控火车有没有在铁轨上正常运行，上线过程中，需要CI/CD pipeline 测试，代码promotion，staging环境上的测试，以确保软件是否达到安全的级别，能不能很好的服务于用户；跑完测试，到部署环节，需要对网站后续健康状况进行监控。
+- 就像Windows安装要等待很久，每次软件迭代也需要等待很久，导致用户很不开心；同样的云端的软件，我们在迭代的同时，也不能令系统宕机，怎么去完成这种更新，就需要我们的DevOps Process。
+- 开发人员，就像造火车，对火车进行设计（开发）； DevOps等于造铁轨，同时监控火车有没有在铁轨上正常运行，上线过程中，需要CI/CD pipeline 测试，代码promotion，staging环境上的测试，以确保软件是否达到安全的级别，能不能很好的服务于用户；跑完测试，到部署环节，还需要对网站后续健康状况进行监控。
 ![devops circle](image/c0101.png) 
 整个课程就是围绕devops circle来讲，会着重介绍最重要的工具
 
 ### How to master DevOps
 ![devops circle detail](image/c0102.png) 
-首先要了解你们公司用的都是哪些工具
+首先要了解你们公司用的都是哪些工具  
 然后去研究这些工具的手册，也需要跟其他的工具做compare
+会做Trouble shooting，解决工具使用中遇到的问题    
+会Coding
 - Senior level的 DevOps已经可以有能力给公司做一些tech stack方面的决定
 - Junior/mid leve的 DevOps要能够看懂手册，把自动化的环节连在一块儿
-会做Trouble shooting，解决工具使用中遇到的问题
-Coding
 - DevOps的coding主要是automation，就是把很多手动要做的东西做成自动化
 
 ### DevOps路线图
 [DevOps路线图](https://github.com/australiaitgroup/DevOps-WIKI/blob/1444e4c34e275638364c6647889e129944cea36c/DevOps%20RoadMap.docx)
-总结了DevOps的学习方式，方法和方向。可以按照文档上的描述，来安排自己的学习内容，但是还是推荐尽量来参加自己的课程。
+总结了DevOps的学习方式，方法和方向。可以按照文档上的描述，来安排自己的学习内容，但是还是推荐尽量来参加课程。
 课程按照devops circle的顺序来讲，同时配有大量的handson
 
 ### DevOps的职业发展
@@ -76,7 +76,7 @@ Coding
 5. Architect
 
 ### DevOps需要处理的问题
-What problems do you need to care as DevOps related engineers? 
+What problems do you need to care as DevOps related engineers?   
 DevOps下有三个Eng，我们的课程主要围绕SRE和DevOps Eng来讲
 #### Cloud Eng 
 - 更多去处理network setup, authentication/authorization，管理infrastructure，PaaS tooling and automation 
@@ -105,9 +105,10 @@ Webhosting static contents (e.g. using AWS S3),存储了包含HTML, CSS, JavaScr
 ![web hosting frontend](image/c0103.png) 
 中间的第一个问号为DNS(Domain Name Server)
 - 用dig, ping都可以获得网站的ip地址
-- Resolve DNS (e.g. using AWS Route 53)
-第二个问好为CDN(Content Delivery Networks)
-- 将网站的静态资源，提前cache到距离用户近到服务器，这样会使latency大幅降低
+- Resolve DNS (e.g. using AWS Route 53) 
+  
+第二个问号为CDN(Content Delivery Networks)
+- 将网站的静态资源，提前cache到距离用户最近的服务器，这样会使latency大幅降低
 - 服务公司有Akamai，最近比较火的有Fastly
 - 好处有Low Latency, better UX(user experience), Globally Availability 
 - AWS中对应：Cloud Front
@@ -126,7 +127,7 @@ Webhosting static contents (e.g. using AWS S3),存储了包含HTML, CSS, JavaScr
 #### 后端架构
 一个简单的后端的架构：
 ![backend arc](image/c0104.png)
-用户的请求，会通过internet，route到后端的服务器，后端的reverse proxy会中止掉请求，再将请求包装好后，再向后端服务器请求。同时reverse proxy还会跟Load Balancer整合在一起。
+用户的请求，会通过internet，route到后端的服务器，后端的reverse proxy会中止掉请求，再将请求包装好后，向后端服务器请求。同时reverse proxy还会跟Load Balancer整合在一起。
 
 #### 后端问题	
 对于DevOps，会关注的后端问题：
@@ -206,7 +207,7 @@ Authorisation: what you are authorised to do?
 ![web arc azure](image/c0109.png) 
 首先，跟Active Directory Server对用户对身份进行验证；同时会去DNS找ip地址
 然后，由CDN拿到网站前端的静态内容；同时由前端的js，可以访问application gateway，gateway 也能作为一个load balancer
-最后，数据会保存在数据库里，其中常用的数据可以存在Redis cache，以便于提取回Function App
+最后，数据会保存在数据库里，其中常用的数据可以存在Redis cache，以便于提取回Function App  
 Azure search，是一个额外的component，因为跟我们DevOps没有太大的联系
 
 ![web arc azure](image/c0110.png)
@@ -216,18 +217,22 @@ Azure search，是一个额外的component，因为跟我们DevOps没有太大�
 核心讨论的问题就是怎么让你的网站运行起来
 ![devops circle](image/c0101.png) 
 Step 1. Plan
-- Poject的plan和breakdown，可能用到Jira, Trello, Portfolio(RoadMap) 
+- Poject的plan和breakdown，可能用到Jira, Trello, Portfolio(RoadMap)  
+  
 Step 2. Code
 - IDE: IJ, VS Code etc...
 - Code Quality: Pair Programming, Code Review, ShellCheck, PEP8 etc...
 - Version Control: Bitbucket, Git
-Step 3/4. Build and Test
+  
+Step 3/4. Build and Test  
 Step 5/6. Release and Deploy
 - 可以完成自动化build和部署，如Bitbucket pipeline
+  
 Step 7. Operate
 - 上线后，要做到Incident Management
 - 尽量避免IT Support Ticket发生，因为IT Support Ticket如果发生 ，证明customer 比你先发现了问题
-- 也要做好incident early detection  
+- 也要做好incident early detection 
+   
 Step 8. Monitoring
 - What to monitor? SLIs/SLO/SLA
 - Golden Signals
