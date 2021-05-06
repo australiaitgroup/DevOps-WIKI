@@ -1,8 +1,36 @@
+# Class-02 CDN/DNS
+## 主要知识点
+  - [1.自我介绍](#1自我介绍)
+    - [Class Rules](#class-rules)
+    - [DevOps怎么去学习](#devops怎么去学习)
+  - [2.Case study: optimising jiangren.com.au](#2case-study-optimising-jiangrencomau)
+    - [Scenario](#scenario)
+    - [关键词提取](#关键词提取)
+    - [分析问题](#分析问题)
+      - [Latency](#latency)
+        - [Latency/网站访问测速](#latency网站访问测速)
+      - [测速结果分析](#测速结果分析)
+      - [Availability](#availability)
+        - [DNS/网站服务器数量测试](#dns网站服务器数量测试)
+      - [DNS测试结果分析](#dns测试结果分析)
+    - [解决方案](#解决方案)
+      - [Content Delivery Network (CDN)](#content-delivery-network-cdn)
+        - [What CDN can help you](#what-cdn-can-help-you)
+        - [CDN on AWS: CloudFront(Handson)](#cdn-on-aws-cloudfronthandson)
+        - [Summarise CDN](#summarise-cdn)
+      - [Domain Name Server(DNS)](#domain-name-serverdns)
+        - [DNS: AWS Route53(Handson)](#dns-aws-route53handson)
+        - [DNS Records on Route53](#dns-records-on-route53)
+  - [4.Homework](#4homework)
+  - [5.AWS](#5aws)
+  - [6.In Class Handson](#6in-class-handson)
+    - [CloudFront(CDN) Setup:](#cloudfrontcdn-setup)
+    - [AWS Route53 Setup:](#aws-route53-setup)
 # 课堂笔记
 
 ## 1.自我介绍
 Holly Liu:  DevOps Consultant at Versent  
-有做过公开课，可以在jiangren youtube找，
+有做过公开课，可以在jiangren youtube找(https://www.youtube.com/watch?v=sGlW0VSSg4o)
 
 课程讲解以亚马逊云平台为主
 DevOps所需要的工具和配置，将在下次tutorial讲解
@@ -13,7 +41,7 @@ DevOps所需要的工具和配置，将在下次tutorial讲解
 - Do the handson
   - 要hands on，无论上课演示的，还是课下的，都要自己做一遍，跟下来
 - You’ll do the troubleshooting
-  - 首先，如果有问题，你的error message/code
+  - 首先，如果有问题，搞清楚你的error message/code
   - 然后看到error之后，你要想到自己的做法，你的trouble shooting step是什么
   - 大部分问题，是可以google解决的
 - Raise questions at any time
@@ -31,7 +59,7 @@ Your task is to find out what are the current problems, what solution and how to
 由上面的描述可取出关键词：
 - Low latency
 - High availability
-  - 希望各地区用户都能正常的访问业务，既使在某一个区收到影响的情况下
+  - 希望各地区用户都能正常的访问业务，既使在某一个区受到影响的情况下
 
 ### 分析问题
 #### Latency
@@ -44,7 +72,7 @@ https://www.dotcom-tools.com/website-speed-test.asp
   - 第二次可以选取不同地区的不同城市
 - 3. 选择Global Perfermance
 #### 测速结果分析
-网站仅针对了澳洲顾客服务，还没有对全球顾客进行优化，需要对Global Latency做优化  
+网站仅针对澳洲顾客服务，还没有对全球顾客进行优化，需要对Global Latency做优化  
 As shown above, Jiangren.com.au loads as fast as 2.6 seconds in Brisbane. However, it takes a few times to load in other locations.
 
 #### Availability
@@ -54,7 +82,7 @@ As shown above, Jiangren.com.au loads as fast as 2.6 seconds in Brisbane. Howeve
   - DNS Check
     - https://www.whatsmydns.net
     - 可以检测该网站在全球不同地区访问时，对应的ip address
-    - 作为优化，一个网站如果在全球有edge location的话，里面可以帮忙缓存网站的内容，这样可以用户访问，将首先到达最近的edge location，大幅提高访问速度
+    - 作为优化，一个网站如果在全球有edge location的话，可以帮忙缓存网站的内容；这样当用户访问，将首先到达最近的edge location，大幅提高访问速度
   - IP Check
 - Cmds
   - mac/linux: dig
@@ -72,7 +100,7 @@ If there is a spamming user sends a significant amount of request or use DDoS to
 
 ### 解决方案
 #### Content Delivery Network (CDN)
-帮助你把文件储存在全球不同的地区，在不同大陆设置不同的edge server，可以便于用户访问时，直接到达该地区的edge server，拿到网站的缓存，以达到快速访问
+帮助你把文件储存在全球不同的地区，在不同大陆设置不同的edge server，以便于用户访问时，直接到达该地区的edge server，拿到网站的缓存，以达到快速访问
 - Akamai: CDN的一个品牌，帮你设置多个edge server
 - 用户访问时，如果离该地最近的edge/cache server挂掉，那么用户会访问到其它的edge/cache server，或直接访问origin server 
 
@@ -121,8 +149,8 @@ to update.
 
 ##### DNS: AWS Route53(Handson)
 ![jiangren dns](image/c0202.png)
-并不会直接使用jiangren.com.au，而是使用了一个subdomain
-可以在AWS console页面，search栏搜索route 53进入
+并不会直接使用jiangren.com.au，而是使用了一个subdomain  
+想进入route 53，可以在AWS console页面，search栏搜索route 53
 - Setup: https://github.com/JiangRenDevOps/DevOpsLectureNotesV4/blob/main/WK1-CDN-DNS/DNS.md
 - 对应课程视频2:03:20 ~ 2:26:00
 - (AWS) CNAME:将现有record的名字，map到另一个域名（例如cloudfront里产生的新域名）或者subdomain
@@ -145,7 +173,7 @@ https://github.com/JiangRenDevOps/DevOpsLectureNotesV4/blob/main/WK1-CDN-DNS /ho
   - 发展至今，已经形成了一个很大的版图：
 ![aws services](image/c0203.png)
 - 开始接触最多的是EC2(虚拟机业务)
-- 这个图基本上是我们最常用的
+- 这个图汇聚了我们最常用的
 - 关于考证：
   - 非常鼓励大家去考取
   - DevOps 就业领域也有很大的缺口，同时对Junior也有很友好的培养
