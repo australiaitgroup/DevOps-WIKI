@@ -1,15 +1,51 @@
+# Class-03 Git
+## 主要知识点
+  - [1.背景介绍](#1背景介绍)
+    - [自我介绍](#自我介绍)
+  - [2.Background](#2background)
+    - [2.1 What is a Version Control system?](#21-what-is-a-version-control-system)
+      - [2.1.1 Version Control中的常见概念](#211-version-control中的常见概念)
+    - [2.2 Types of Version Control system](#22-types-of-version-control-system)
+    - [2.3 Why Use Git?](#23-why-use-git)
+    - [2.4 Which Git to use?](#24-which-git-to-use)
+  - [3.Step by step git hands-on](#3step-by-step-git-hands-on)
+    - [3.1 Git - Configuration](#31-git---configuration)
+    - [3.2 Git - init](#32-git---init)
+    - [3.3 Git - add](#33-git---add)
+      - [3.3.1 Show command line manual](#331-show-command-line-manual)
+    - [3.4 Stage a change](#34-stage-a-change)
+    - [3.5 Check staging status](#35-check-staging-status)
+    - [3.6 Add aliase](#36-add-aliase)
+    - [3.7 Check "help"](#37-check-help)
+    - [3.8 Git commit](#38-git-commit)
+    - [3.9 Ignoring Files](#39-ignoring-files)
+    - [3.10 Git log](#310-git-log)
+    - [3.11 Git restore](#311-git-restore)
+    - [3.12 Git reset/revert/rm/clean](#312-git-resetrevertrmclean)
+    - [3.13 Git stash](#313-git-stash)
+    - [3.14 课间练习：](#314-课间练习)
+    - [3.15 Git Cloud Repository：](#315-git-cloud-repository)
+    - [3.15 Git Clone：](#315-git-clone)
+      - [3.15.1 How to create personal access token：](#3151-how-to-create-personal-access-token)
+      - [3.15.2 Or use SSH：](#3152-or-use-ssh)
+    - [3.16 Bitbucket Handson：](#316-bitbucket-handson)
+    - [3.17 Git with branching：](#317-git-with-branching)
+    - [3.18 Pull Request：](#318-pull-request)
+  - [4.Visualisation](#4visualisation)
+  - [5.Summary](#5summary)
+ 
 # 课堂笔记
 ## 1.背景介绍
 ### 自我介绍
 Sean，Atlassian 的software developer，更多工作任务在于pipeline的维护  
-从测试做起，转到developer，后面工作更偏运维
-现在趋势是作为开发，你要懂运维；作为运维，你要懂开发；更强调全能型人才
+从测试做起，转到developer，后面工作更偏运维  
+> 现在趋势是：作为开发，你要懂运维；作为运维，你要懂开发；更强调全能型人才
 
-Git Goal
-在本地怎么工作的
-在云端和远端存储，就要用到远端代码库/Github
-解决文件版本控制中的conflict
-创建自己的云端项目，并学会pull request
+Git Goal 本节课学习重点：  
+- Git在本地怎么工作的
+- 在云端和远端存储，要用到的远端代码库/Github
+- 解决文件版本控制中的conflict
+- 创建自己的云端项目，并学会pull request
 
 
 ## 2.Background
@@ -21,14 +57,14 @@ Git Goal
 
 A version control system, or VCS, is how one tracks changes, modifications, and updates to source files over time. Creating a history of changes for a project over time.
 
-Used for:
-• Documentation 
-• Code
-• Configuration
-• Collaboration
+Used for:  
+- Documentation 
+- Code
+- Configuration
+- Collaboration
 
 #### 2.1.1 Version Control中的常见概念
-- Repository（代码库）: Your project.
+- Repository（代码库）: 等于Your project.
   - “I created a new repository (repo) for my school project so we can collaborate more easily.”
 - Diff（两个文件间的差别）: The delta (additions and deletions) between two states of
 a project.
@@ -93,7 +129,7 @@ terminal下，使用`man`加命令，可以显示该命令的使用manual，如
     git status
 ```
 ### 3.6 Add aliase
-通过创建aliase来简化命令的输入，比如建立`status`的aliase
+通过创建aliase来简化命令的输入，比如建立`status`的aliase为`st`
 ```
     git config --global alias.st status
 ```
@@ -135,16 +171,16 @@ https://github.com/github/gitignore
 首先，文件变更指的是文件有改动，并且已经保存，`restore`无法还原任何未保存的变动，同时restore的情况基本发生在，该文件并未stage时（git add），一旦该文件被stage了，`restore`也无法还原变更。
   
 ### 3.12 Git reset/revert/rm/clean
-reset:完全删掉某个commit之后的所有commit
-revert:回滚到某个历史（commit）版本
-rm:将文件从stage/tracking中移除
-clean:将没有被tracking（没有commit到repository）的文件全部删除
+reset:完全删掉某个commit之后的所有commit  
+revert:回滚到某个历史（commit）版本  
+rm:将文件从stage/tracking中移除  
+clean:将没有被tracking（没有commit到repository）的文件全部删除  
 详细使用命令也可参考：https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/Class-05%20Git.md
 
 ### 3.13 Git stash
-对尚未被stage/git add的文件，进行暂存操作：
-`git stash`: 将文件暂存
-`git stash list`: 查看stash里存在的文件
+对尚未被stage/git add的文件，进行暂存操作：  
+`git stash`: 将文件暂存  
+`git stash list`: 查看stash里存在的文件  
 `git stash pop`或者`git stash apply [--index]`: 将stash里的文件，取出
 
 ### 3.14 课间练习：
@@ -153,14 +189,15 @@ https://github.com/JiangRenDevOps/DevOpsLectureNotesV4/blob/main/WK2-Git-Basics/
 ### 3.15 Git Cloud Repository：
 将local连入云端，需要使用 git remote add, 例如
 `git remote add origin https://github.com/australiaitgroup/DevOps-WIKI.git`
-然后，就可以使用`git pull`与`git push`，同云端同步更新  
+然后，就可以使用`git pull`与`git push`，同云端同步更新 
+
 `commit` locally first, `push` later
 `git push` updates the remote repository with any commits made locally to a branch.
 
 ### 3.15 Git Clone：
 将云端的项目copy到本地，如
 `git clone https://github.com/username/new_repo`
-另外，
+
 #### 3.15.1 How to create personal access token：
 https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
 
@@ -189,11 +226,13 @@ Benefits:
 - Sufficient testing and better stability
 - Reducing conflicts Continuous Delivery 
 - Clearer responsibility
+  
 Before you create Pull Request, please check:
 - Follow coding standard (code style, naming convention, etc. )
 - Have tests
 - No conflict
 - DO NOT leave comment blank – add summary of this PR
+
 Comments for Code Review:
 - LGTM – look good to me 
 - :+1
