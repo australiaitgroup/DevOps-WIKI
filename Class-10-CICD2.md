@@ -27,7 +27,7 @@
 # 课堂笔记
 ## 1.Devops overview
 ![Devops overview](image/c1001.png)
-Ref: `https://github.com/JiangRenDevOps/DevOpsLectureNotesV4/blob/main/WK4_Travis_CI_CD/dev_process_review.md`
+Ref: https://github.com/JiangRenDevOps/DevOpsLectureNotesV4/blob/main/WK4_Travis_CI_CD/dev_process_review.md
 ## 2.What is CI/ CD 
 ![what is CI/ CD](image/c1002.png)
 ### 2.1 Continuous Integration 
