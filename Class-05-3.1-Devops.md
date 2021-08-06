@@ -35,7 +35,7 @@
 ![software development life cycle](image/c0901-lifecycle.png)
 ### 1.2 SRE job responsibilities in software development life cycle
 ![Devops for Webapp](image/c0902-devops-for-webapp.png)
-0903-CNAME-record-jiangren.png
+
 ### 1.3 add a CNAME record for jiangren website
 ![CNAME record pointing to jiangren website](image/0903-CNAME-record-jiangren.png)
 
@@ -191,7 +191,7 @@ Maximise Stability (while they are holding the pager)  Keep current state
 
   4 Challenges of Microservices
   ![Challenges of Microservices](image/c0924.png)
-  
+
 - Containerisation https://www.youtube.com/watch?v=n-JwAM6XF88
 
 ## 9 The value of SRE  
@@ -208,6 +208,14 @@ What happens when you enter google.com in your browser?
 Or
 
 What happens when you do curl google.com in your terminal?
+
+<p align="center">
+  <img src="image/c0926.png" width=800/>
+</p>
+
+## Homework
+- Look for SRE positions requirements / Compare with current experiment / Identify gaps
+- Complete a diagram of “what happens when you enter google.com into browser?”
 
 ## Reference:
 Containerization:
