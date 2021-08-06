@@ -38,7 +38,7 @@
 0903-CNAME-record-jiangren.png
 ### 1.3 add a CNAME record for jiangren website
 ![CNAME record pointing to jiangren website](image/0903-CNAME-record-jiangren.png)
-c0904-problems-without-devops
+
 ### 1.4 problems happens without devops SRE
 ![problems withou SRE](image/c0904-problems-without-devops.png)
 ## 2 What is Site Reliability Engineering?
@@ -176,13 +176,22 @@ Maximise Stability (while they are holding the pager)  Keep current state
   Continuous Integration  Continuous Delivery & deployment
   ![CI/CD pipeline](image/c0920.png)
 ## 8 Change Should Be Gradual
-
+- waterfall and agile approach
 ![waterfall and agile approach](image/c0919.png)
-- Microservices https://youtu.be/j1gU2oGFayY?t=33
+- Microservices  https://youtu.be/j1gU2oGFayY?t=33
+  
+  1 Monolith and Microservices
   ![Monolith and Microservices](image/c0921.png)
+
+  2 Monolith problems
   ![Monolith problems](image/c0922.png)
+
+  3 Benifits of Microservices
   ![Benifits of Microservices](image/c0923.png)
+
+  4 Challenges of Microservices
   ![Challenges of Microservices](image/c0924.png)
+  
 - Containerisation https://www.youtube.com/watch?v=n-JwAM6XF88
 
 ## 9 The value of SRE  
