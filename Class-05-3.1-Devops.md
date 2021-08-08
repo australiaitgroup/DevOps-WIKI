@@ -33,7 +33,7 @@
 ## 1 Recap
 ### 1.1 software development life cycle
 ![software development life cycle](image/c0901-lifecycle.png)
-### 1.2 SRE job responsibilities in software development life cycle
+### 1.2 SRE hhhh job responsibilities in software development life cycle
 ![Devops for Webapp](image/c0902-devops-for-webapp.png)
 
 ### 1.3 add a CNAME record for jiangren website
@@ -74,9 +74,10 @@ Maximise Stability (while they are holding the pager)  Keep current state
   “DevOps”⼈员构建PaaS平台，enable开发⼈员构建服务并轻松部署，为⾃⼰团队构 建的服务Oncall
 
 - class SRE implements Devops
-- 
+   
   ![SRE responsibilities](image/c0906-SRE-responsibilities.png)
-  More proactive work and less reactive work.
+- More proactive work and less reactive work.
+  
   ![SRE responsibilities](image/c0907-SRE-1.png)
   ![SRE responsibilities](image/c0908-SRE-2.png)
 - Incident Management
