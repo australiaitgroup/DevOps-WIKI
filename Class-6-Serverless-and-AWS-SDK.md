@@ -108,8 +108,8 @@ Installation, configure and authentication: refer to
 ### 2.2 AWS SDK
 - Tools for developing and managing applications on AWS
 > https://aws.amazon.com/tools/
-SDK: Software Development Kit. A collection of software development tools in one installable package.
-SDK - Software Development Kit, 是用来帮助devloper更快捷来开发应用的. 从这个层面上说, sdk, framework都是工具, 不同语言的sdk是不同的工具.
+- SDK: Software Development Kit. A collection of software development tools in one installable package.
+- SDK - Software Development Kit, 是用来帮助devloper更快捷来开发应用的. 从这个层面上说, sdk, framework都是工具, 不同语言的sdk是不同的工具.
 
 - in a world without SDK…
 Each action on AWS is implemented via API calls. Without SDK, you need to sign your API request by generating signatures.
