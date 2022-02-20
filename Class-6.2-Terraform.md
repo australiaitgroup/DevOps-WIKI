@@ -30,22 +30,22 @@
 - Use an IaC tool to apply those changes to your cloud/on-prem environment.
 用代码去管理架构：静态描述, 动态管理
 可以进行版本控制，可以追溯架构在某一时刻符合什么状态
-![IaC](images/Terraform_1.png)
+![IaC](image/Terraform_1.png)
 
 ### 1.2 What “Infrastructure”?
 非云端架构：laptop
 云端架构：AWS
-![infrastructure](images/Terraform_2.png)
+![infrastructure](image/Terraform_2.png)
 
 ### 1.3 Infrastructure in AWS
-![Infrastructure in AWS](images/Terraform_3.png)
+![Infrastructure in AWS](image/Terraform_3.png)
 
 ### 1.4 The problems IaC can solve
 怎样管理架构，怎么描述架构（给非技术人员看）
 - Create/change/destroy infrastructure resources. 创建/更新/删除架构上的资源，eg，database，storage
 - Deploy/update applications on top of the infrastructure. 管理架构上的业务，架构上资源的应用，eg，创建一个博客，还要安装和调试，才能使用应用.
 - Manage the configurations used by the applications. 管理架构上应用的配置，eg，博客的域名，博客的管理团队，用的皮肤，一些更加细分的配置. 家用应用不太需要这个，但企业级应用就需要，比如几十万个博客管理，就需要用代码来管理，人为管理耗时耗力还容易出错，但代码管理可以实现automation，避免出错.
-![tools](images/Terraform_4.png)
+![tools](image/Terraform_4.png)
 
 ## 2.Terraform Overview
 ### 2.1 What is Terraform
@@ -59,10 +59,10 @@ Hashicorp also owns Vagrant, Packer, Consul, Vault etc. See https://www.hashicor
 - Written in Golang
 - Open source
 - Use own syntax -HCL (Hashicorp Configuration Language). 有自己的语言，自己脚本的逻辑，HCL，支持多个云
-![cli](images/Terraform_5.png)
+![cli](image/Terraform_5.png)
 
 #### Tiny Terraform Example
-![terraform example](images/Terraform_6.png)
+![terraform example](image/Terraform_6.png)
 
 ## 3.Terraform Basic Concepts
 - The language -HCL
@@ -75,55 +75,55 @@ Hashicorp also owns Vagrant, Packer, Consul, Vault etc. See https://www.hashicor
 ### 3.1 The Language (HCL)
 Hashicorp Configuration Language(HCL) 
 https://github.com/hashicorp/hcl
-![hcl1](images/Terraform_7.png)
+![hcl1](image/Terraform_7.png)
 
 #### Resource Reference Syntax
-![hcl2](images/Terraform_8.png)
+![hcl2](image/Terraform_8.png)
 
 ### 3.2 Planning & Applying
 terraform init 
 terraform plan 
 terraform apply
-![planning & applying](images/Terraform_9.png)
+![planning & applying](image/Terraform_9.png)
 plan和apply可以一直循环. 用terraform管理的资源是希望一直能跑的，一直能更新.
 
 ### 3.3 State
 How does Terraform track what resources it creates.
 Terraform怎样知道目前项目有什么资源?
 每次用terraform跑完架构会生成状态文件, 下次再用terraform管理架构，会看状态文件来得知两次架构是否完全一致，可以得知接下来terraform要进行什么操作.
-![state](images/Terraform_10.png)
+![state](image/Terraform_10.png)
 
 ### 3.4 Dependency Resolution
 Generate a visual representation of the config plan with
 > https://graphviz.org/download/
    
 可以看架构里资源有怎样的依赖关系:
-![DR1](images/Terraform_11.png)
+![DR1](image/Terraform_11.png)
 Find out error beforehand, e.g Cyclic Dependencies
-![DR2](images/Terraform_12.png)
+![DR2](image/Terraform_12.png)
 
 ### 3.5 File Structure
 - Terraform magically import all tf files in the current directory.
 - Common convention is to have a main.tf as an entry point.
 - What if you want subdirectories?
-![files](images/Terraform_13.png)
+![files](image/Terraform_13.png)
 
 ### 3.6 Providers
 - Usually specified in the main.tf file
-![Providers1](images/Terraform_14.png)
+![Providers1](image/Terraform_14.png)
 - https://www.terraform.io/docs/providers/
-![Providers2](images/Terraform_15.png)
+![Providers2](image/Terraform_15.png)
 
 ### 3.7 Variables
 - Define any variable and later refer to it.
 - A good use case is to define variables for multiple environments.
   - env=dev or env= prod.
-![Variables](images/Terraform_16.png)
+![Variables](image/Terraform_16.png)
 
 ### 3.8 Output
 Usually define the output to show the link of the resource. 
 产出：每次跑完terraform，告诉你需不需要打印一些内容.
-![Output](images/Terraform_17.png)
+![Output](image/Terraform_17.png)
 
 ## 4.Terraform Hands-on
 - S3_lambda_gateway_api
