@@ -7,6 +7,10 @@
 [DevOps 第 1 节课 DevOps 初讲](Class-01-Intro.md)  
 [DevOps 第 2 节课 CDN&DNS](Class-02-CDN-DNS.md)  
 [DevOps 第 3 节课 Git](Class-03-Git.md)
+[DevOps 第 5 节课 Linux and Bash](Class-5-Linux-and-Bash-and-Regex.md)
+[DevOps 第 6 节课 Serverless and AWS SDK](Class-6-Serverless-and-AWS-SDK.md)
+[DevOps 第 6.2 节课 Terraform](Class-6.2-Terraform.md)
+[DevOps 第 7 节课 Ansible](Class-7-Ansible.md)
 
 ## Git Workflow：
 
