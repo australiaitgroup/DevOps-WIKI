@@ -2,7 +2,7 @@
 
 # Prometheus
 
-![Untitled](images//Prometheus.png)
+![Untitled](image/Prometheus.png)
 
 ## Concepts
 
@@ -91,7 +91,7 @@ The last block, `scrape_configs`, controls what resources Prometheus monitors. 
 
 Often, in SRE interviews, the interviewer may ask you about how would you monitor the following system and trouble shoot a latency issue?
 
-![Untitled](images/Monitoring.png)
+![Untitled](image/Monitoring.png)
 
 If we break this question down, there are literally two questions:
 
