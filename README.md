@@ -11,6 +11,7 @@
 [DevOps 第 6 节课 Serverless and AWS SDK](Class-6-Serverless-and-AWS-SDK.md)  
 [DevOps 第 6.2 节课 Terraform](Class-6.2-Terraform.md)  
 [DevOps 第 7 节课 Ansible](Class-7-Ansible.md)  
+[DevOps 第 8.1 节课 Monitoring 1](Class-8.1-Monitoring1.md)
 
 ## Git Workflow：
 
