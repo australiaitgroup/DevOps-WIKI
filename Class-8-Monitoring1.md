@@ -1,4 +1,4 @@
-# Class 8 Monitoring 1
+# Class 8 Monitoring
 
 # Prometheus
 
